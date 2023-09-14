@@ -43,3 +43,13 @@ class Conjuntos:
 
         return self.elementos + other.elementos
 
+    @classmethod
+    def intersectar(cls, conjunto1: 'Conjuntos', conjunto2: 'Conjuntos'):
+        nuevo_conjunto = cls(f"{conjunto1.nombre} INTERSECTADO {conjunto2.nombre}")
+        for elemento in conjunto1.elementos:
+            if conjunto1.contiene(elemento) and conjunto2.contiene(elemento) and not nuevo_conjunto.contiene(elemento):
+                nuevo_conjunto.agregrar_elemento(elemento)
+
+    def __str__(self):
+        elementos_nombre = ', '.join(elemento.nombre for elemento in self.elementos)
+        return f"{self.nombre}: {elementos_nombre}"
