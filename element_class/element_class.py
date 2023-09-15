@@ -10,7 +10,7 @@ class Elemento:
 
 
 class Conjuntos:
-    contador: int
+    contador: int = 0
 
     def __init__(self, nombre: str):
         self.elementos: list[Elemento] = []
